@@ -1,0 +1,52 @@
+﻿<Window x:Class="Tema3_Calculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3_Calculadora"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    <Window.Resources>
+        <Style TargetType="TextBox" >
+            <Setter Property="Margin" Value="26,10,26,0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="98"/>
+        </Style>
+        <Style TargetType="ColumnDefinition" x:Key="1">
+            <Setter Property="Width" Value="100"/>
+        </Style>
+        <Style TargetType="RowDefinition" x:Key="2">
+            <Setter Property="Height" Value="100"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBox x:Name="texto" Margin="26,10,26,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="98" TextChanged="TextBox_TextChanged"/>
+        </StackPanel>
+        <Grid Margin="45,142,45,102" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource 1}"/>
+                <ColumnDefinition Style="{StaticResource 1}"/>
+                <ColumnDefinition Style="{StaticResource 1}"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource 2}"/>
+                <RowDefinition Style="{StaticResource 2}"/>
+                <RowDefinition Style="{StaticResource 2}"/>
+                <RowDefinition Style="{StaticResource 2}"/>
+
+            </Grid.RowDefinitions>
+            <Button x:Name="boton1" Grid.Row="0" Grid.Column="0" Click="Button_Click" >1</Button>
+            <Button x:Name="boton2" Grid.Row="0" Grid.Column="1" Click="Button_Click" >2</Button>
+            <Button x:Name="boton3" Grid.Row="0" Grid.Column="2" Click="Button_Click" >3</Button>
+            <Button x:Name="boton4" Grid.Row="1" Grid.Column="0" Click="Button_Click" >4</Button>
+            <Button x:Name="boton5" Grid.Row="1" Grid.Column="1" Click="Button_Click" >5</Button>
+            <Button x:Name="boton6" Grid.Row="1" Grid.Column="2" Click="Button_Click"  >6</Button>
+            <Button x:Name="boton7" Grid.Row="2" Grid.Column="0" Click="Button_Click" >7</Button>
+            <Button x:Name="boton8" Grid.Row="2" Grid.Column="1" Click="Button_Click" >8</Button>
+            <Button x:Name="boton9" Grid.Row="2" Grid.Column="2" Click="Button_Click" >9</Button>
+            <Button x:Name="boton0" Grid.Row="3" Grid.Column="1" Margin="0,0,0,50" Click="Button_Click" >0</Button>
+        </Grid>
+    </Grid>
+</Window>
